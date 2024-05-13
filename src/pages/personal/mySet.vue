@@ -51,7 +51,7 @@
 /** 数据导入 **/
 import { ref, reactive } from "vue";
 import { ElMessage } from "element-plus";
-import { updateUserInfo, getUserInfo } from "@/api/user.js";
+import { updateUserInfoById, getUserInfo } from "@/api/user.js";
 import { useUserStore } from "@/store"
 import proxy from '@/config/proxy';
 
@@ -80,6 +80,7 @@ const checkHandle = val => {
 }
 // 更新信息的参数
 const user = reactive({
+  id: store.getUserInfo.id,
   name: userInfo.value.name,
   icon: userInfo.value.icon,
   gender: userInfo.value.gender || 0
@@ -107,7 +108,9 @@ const changeHandle = () => {
 
 // 提交更新信息
 const updateUserInfoHandle = async () => {
-  await updateUserInfo(user)
+  console.log("userInfo.value");
+  console.log(userInfo.value);
+  await updateUserInfoById(user)
     .then(async (res) => {
       if (res.code == 200) {
         // 从新获取当前登录用户的信息
