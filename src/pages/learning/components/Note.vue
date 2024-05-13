@@ -1,11 +1,7 @@
 <!-- 学习笔记 -->
 <template>
   <div class="learnNoteWrapper">
-    <div class="tabCheck">
-      <span class="fx-1 cur-pt" @click="activeHandle(1)" :class="{act: actIndex == 1}">我的笔记</span>
-      <span class="line"></span>
-      <span class="fx-1 cur-pt" @click="activeHandle(2)" :class="{act: actIndex == 2}">全部笔记</span>
-    </div>
+
     <div class="noteCont" v-if="noteListsDataes.length > 0">
       <div class="noteLists" v-for="item in noteListsDataes">
       <div class="userInfo fx-sb">
@@ -34,25 +30,12 @@
           <span class="" @click="delNoteHandle(item)" v-if="userInfo.id == item.authorId ">
             <i class="iconfont zhy-a-icon-delete22x" style="font-size: 23px;top: 3px;"></i> 删除
           </span>
-          <!-- <span class="" @click="putLikedHandle(item)" >
-            <i v-show="!item.liked" class="iconfont zhy-a-icon-zan2x"></i> 
-            <i v-show="item.liked" class="iconfont zhy-a-btn_zan_sel2x"></i>
-          </span> -->
         </div>
       </div>
       </div>
     </div>
     <div class="noData" v-else>
-      <Empty :type="true"></Empty>
-    </div>
-    <div class="questCont">
-      <el-input v-model="noteParams.content" rows="4" resize="none" type="textarea" @input="ruleshandle" maxlength="500" show-word-limit placeholder="请输入" />
-      <div class="fx-sb fx-al-ct" style="margin-top: 12px;">
-        <div><el-checkbox v-model="noteParams.isPrivate" label="私密" size="large" /></div>
-        <div class="subCont">
-          <span class="bt ft-14" :class="{'bt-dis':!isSend}" @click="submitForm()">保存</span>
-        </div>
-      </div>
+      <Empty :type="true" desc="功能尚未开发"></Empty>
     </div>
   </div>
 </template>

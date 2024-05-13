@@ -3,7 +3,7 @@
   <div class="couponWrapper">
     <div class="personalCards">
       <div class="headTop fx-sb">
-        <CardsTitle class="marg-bt-20" title="我的优惠券"/>
+        <CardsTitle class="marg-bt-20" title="我的优惠券11"/>
         <div class="fx">
           <span class="font-bt ft-14" @click="() => dialogVisible = true">兑换优惠券&gt;</span>
           <span @click="() => $router.push({path: '/personal/main/myCouponExplain'})"

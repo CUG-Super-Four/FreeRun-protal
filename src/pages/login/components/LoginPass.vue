@@ -48,7 +48,7 @@ const formRef = ref();
 const checked = ref(false)
 // 登录参数效验
 const fromData = reactive({
-  username: "jack",
+  username: "rose",
   password: "123456",
   type: 1
 });
