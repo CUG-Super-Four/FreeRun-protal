@@ -67,7 +67,7 @@ const userInfo = ref(store.getUserInfo)
 
 
 const env = import.meta.env.MODE || "development"
-const actions = proxy[env].host+'/ms/files'
+const actions = 'http://8.149.138.1:10010' +'/ms/files'//proxy[env].host+'/ms/files'
 const uploadHeaders = {authorization: store.getToken}
 const tabData = [
   {id: 0, name: '基本信息'},

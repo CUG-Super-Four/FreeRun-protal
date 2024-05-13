@@ -26,21 +26,17 @@ export default defineConfig((mode) => {
       port: 18082,
       host: '0.0.0.0',
       proxy: {
-        '/img-tx': {
-          target:  'http://8.149.138.1',
+        "/img-tx": {
+          target: "https://wisehub-1317268999.cos.ap-shanghai.myqcloud.com/",
           changeOrigin: true,
-          // rewrite: (path) => {
-          //   return path.replace(/^\/img-tx/, '')
-          // }
+          rewrite: (path) => {
+            return path.replace(/^\/img-tx/, '')
+          }
         },
         '/mock/3359':{
           target: 'http://172.17.0.137:8321/mock/3359',
           changeOrigin: true,
         },
-        '/2024':{
-          target: 'https://s21.ax1x.com/',
-          changeOrigin: true,
-        }
       }
     },
   }
