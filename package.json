@@ -25,6 +25,7 @@
     "sass": "^1.53.0",
     "swiper": "^8.3.1",
     "tcadapter": "^0.0.8",
+    "tcplayer.js": "^5.1.0",
     "vite-svg-loader": "^3.4.0",
     "vue": "^3.2.25",
     "vue-router": "^4.1.2"
