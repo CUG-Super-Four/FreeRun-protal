@@ -121,8 +121,8 @@ const baseDetailsData = ref({})
 const baseClassTeacher = ref([])
 
 // table切换数据 - 静态数据
-const logData = [{id: 1, name: '课程介绍'}, {id: 2, name: '课程目录'},{id: 3, name: '问答'},{id: 4, name: '笔记'}, {id: 5, name: '用户评价'}]
-const noLogData = [{id: 1, name: '课程介绍'}, {id: 2, name: '课程目录'}, {id: 5, name: '用户评价'}]
+const logData = [{id: 1, name: '课程介绍'}, {id: 2, name: '课程目录'},{id: 3, name: '问答'},{id: 4, name: '笔记'}]
+const noLogData = [{id: 1, name: '课程介绍'}, {id: 2, name: '课程目录'}]
 const tableBar = computed(() => {
   return isLogin() && isSignUp.value ? logData : noLogData
 })
