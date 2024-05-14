@@ -12,7 +12,7 @@
           new Date(data.createTime).toLocaleDateString() + ' - ' + new Date(data.expireTime).toLocaleDateString()}}
       </div>
       <div><span>已学习：</span><em>{{data.learnedSections}}</em> / {{data.sections}}</div>
-      <div v-if="type == '1'"><span>正在学习：</span>第{{data.latestSectionIndex}}节 {{data.latestSectionName}}</div>
+      
     </div>
     <div class="btnCont">
       <div class="btn" v-if="type == '1'" @click="() => $router.push({path: '/learning/index', query: {id: data.courseId}})">
