@@ -223,14 +223,14 @@ const player = ref(null)
 const initPlay = (fileID, psign) => {
   console.log("aasd:",fileID,"asdasdasdad:",psign);
   player.value = new TCPlayer(videoRef.value, {
-    appID: '1312394356',
+    appID: '1317268999',
     fileID,
     psign,
     posterImage: true,
     autoplay: true,
     preload: 'auto',
     hlsConfig: {},
-    licenseUrl:"https://license.vod2.myqcloud.com/license/v2/1313707997_1/v_cube.license"
+    licenseUrl:"https://license.vod2.myqcloud.com/license/v2/1317268999_1/v_cube.license"
   });
   player.value.on('timeupdate', function () {
     currentPlayData.moment = player.value.currentTime();
@@ -343,7 +343,7 @@ const playHadle = async (val) => {
       }
       player.value.loadVideoByID(
           {
-            appID: '1312394356',
+            appID: '1317268999',
             fileID: fileId.value,
             psign: signature.value,
           }
