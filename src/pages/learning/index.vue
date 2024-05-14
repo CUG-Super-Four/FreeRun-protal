@@ -66,6 +66,8 @@ import { ElMessage, ElMessageBox } from "element-plus";
 import { getMediasSignature, addPlayLog, getLearningClassDetails } from "@/api/class.js";
 import { useRoute } from "vue-router";
 import { dataCacheStore } from "@/store"
+import TCPlayer from 'tcplayer.js';
+import 'tcplayer.js/dist/tcplayer.min.css';
 // 组件导入
 import TableSwitchBar from "./components/TableSwitchBar.vue";
 import Catalogue from "./components/Catalogue.vue";
@@ -219,6 +221,7 @@ const currentPlayTime = ref(0)
 // 初始化视频播放器并播放视频 视频ID、播放器签名
 const player = ref(null)
 const initPlay = (fileID, psign) => {
+  console.log("aasd:",fileID,"asdasdasdad:",psign);
   player.value = new TCPlayer(videoRef.value, {
     appID: '1312394356',
     fileID,
@@ -227,6 +230,7 @@ const initPlay = (fileID, psign) => {
     autoplay: true,
     preload: 'auto',
     hlsConfig: {},
+    licenseUrl:"https://license.vod2.myqcloud.com/license/v2/1313707997_1/v_cube.license"
   });
   player.value.on('timeupdate', function () {
     currentPlayData.moment = player.value.currentTime();
@@ -289,9 +293,12 @@ const addPlayLogHandle = () => {
 // 通过课程的小节id获取视频的fileId
 const getMediasSignatureData = async (sectionId) => {
   let res = await getMediasSignature({sectionId})
+  console.log("sec::",sectionId);
   if (res.code === 200) {
     fileId.value = res.data.fileId
     signature.value = res.data.signature
+    console.log("fileId:",fileId,"signature:",signature);
+    player.value=null;
     if (player.value == null) {
       initPlay(res.data.fileId, res.data.signature)
     }
