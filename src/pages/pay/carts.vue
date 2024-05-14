@@ -60,7 +60,7 @@
       <div class="count ft-14 fx fx-1">
         <div>
           <p>合计： <span class="pric">￥ {{ (totalAmount / 100).toFixed(2)}}</span></p>
-          <p>若购买享有优惠，相应金额将在订单结算页面减扣</p>
+          <p></p>
         </div>
         <div @click="goSettlement" class="bt bt-red">去下单</div>
       </div>

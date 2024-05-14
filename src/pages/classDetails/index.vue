@@ -37,7 +37,7 @@
           </div>
           <div class="buy" v-if="!isSignUp">
             <span class="bt-red1 bt-round marg-rt-20" @click="addCarts()">加入购物车</span>
-            <span class="bt-red bt-round" @click="payHandle()" >立即购买</span>
+            <span class="bt-red bt-round" @click="payHandle()" style="display: none;">立即购买</span>
           </div>
           <div class="buy" v-else @click="goLearning">
             <span class="bt-red bt-round">马上学习</span>

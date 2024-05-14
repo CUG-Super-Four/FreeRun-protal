@@ -28,10 +28,10 @@
                     />
                   </el-select>
         </div>
-        <div v-else class="noData"> 优惠券： 暂无可用优惠券</div>
+        <div v-else class="noData"> </div>
         <div class="price" style="width: 195px">
           <div class="fx-sb"><span>订单总价：</span> <span>￥ {{amountConversion(orderInfo.totalAmount)}}</span></div>
-          <div class="fx-sb"><span>优惠金额：</span>  <span>￥ {{amountConversion(discountAmount) || 0}}</span></div>
+          <!-- <div class="fx-sb"><span>优惠金额：</span>  <span>￥ {{amountConversion(discountAmount) || 0}}</span></div> -->
         </div>
       </div>
       <div class="paid"><span>实付金额：</span><span class="ft-cl-err"> ￥ {{price}}</span></div>
@@ -122,8 +122,8 @@ const orderHandle = async () => {
     })
     .catch(() => {
       ElMessage({
-        message: "获取优惠券信息出错！",
-        type: 'error'
+        message: "暂未实现购买功能，付费课程仅供测试使用，请学习免费课程",
+        //type: 'error'
       });
     });
 } 
